@@ -8,6 +8,6 @@ export KUBE_TOKEN=${KUBE_TOKEN_PROD}
 cd kd
 kd --debug \
    --insecure-skip-tls-verify --timeout 5m0s \
-   --file ${ENVIRONMENT}/pttg-fs-calc-ui-deployment.yaml \
-   --file ${ENVIRONMENT}/pttg-fs-calc-ui-ingress.yaml \
-   --file ${ENVIRONMENT}/pttg-fs-calc-ui-svc.yaml
+   --file pttg-fs-calc-ui-deployment.yaml \
+   --file pttg-fs-calc-ui-ingress.yaml \
+   --file pttg-fs-calc-ui-svc.yaml
