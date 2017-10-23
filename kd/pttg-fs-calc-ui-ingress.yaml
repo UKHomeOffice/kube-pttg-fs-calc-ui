@@ -6,25 +6,25 @@ metadata:
     kubernetes.io/tls-acme: "true"
     ingress.kubernetes.io/secure-backends: "true"
 #    ingress.kubernetes.io/whitelist-source-range: "86.188.197.170/24"
-  name: pttg-fs-ui
+  name: pttg-fs-calc-ui
 spec:
   rules:
-  - host: pttg-fs-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
+  - host: pttg-fs-calc-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
     http:
       paths:
       - backend:
-          serviceName: pttg-fs-ui
+          serviceName: pttg-fs-calc-ui
           servicePort: 443
         path: /
-  - host: www.pttg-fs-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
+  - host: www.pttg-fs-calc-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
     http:
       paths:
       - backend:
-          serviceName: pttg-fs-ui
+          serviceName: pttg-fs-calc-ui
           servicePort: 443
         path: /
   tls:
   - hosts:
-    - pttg-fs-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
-    - www.pttg-fs-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
-    secretName: letsencrypt-pttg-fs-ui
+    - pttg-fs-calc-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
+    - www.pttg-fs-calc-ui-{{.ENVIRONMENT}}.notprod.homeoffice.gov.uk
+    secretName: letsencrypt-pttg-fs-calc-ui
