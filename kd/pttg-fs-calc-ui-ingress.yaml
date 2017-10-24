@@ -18,4 +18,4 @@ spec:
   tls:
   - hosts:
     - fs.calc.{{.ENVIRONMENT}}.notprod.pttg.homeoffice.gov.uk
-    secretName: letsencrypt-tls
+    secretName: letsencrypt-pttg-fs-calc-tls
