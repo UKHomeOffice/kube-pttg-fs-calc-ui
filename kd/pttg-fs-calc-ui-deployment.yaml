@@ -115,7 +115,7 @@ spec:
                 name: endpoint-config
                 key: PROXY_DISCOVERY_URL
           - name: PROXY_REDIRECTION_URL
-            value: "fs.calc.{{.ENVIRONMENT}}.notprod.pttg.homeoffice.gov.uk"
+            value: "https://fs.calc.{{.ENVIRONMENT}}.notprod.pttg.homeoffice.gov.uk"
         args:
           - --config=/etc/secrets/keycloak-api-secret.yaml
           - --client-id=pttg-fs-calc-{{.ENVIRONMENT}}
