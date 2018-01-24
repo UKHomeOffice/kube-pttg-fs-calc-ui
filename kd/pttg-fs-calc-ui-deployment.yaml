@@ -126,7 +126,7 @@ spec:
           - --no-redirects=false
           - --cors-origins='*'
           - --resource=uri=/healthz|white-listed=true
-          - --resource=uri=/|methods=GET,POST|roles=pttg-fs-calc
+          - --resource=uri=/|methods=GET,POST|roles=pttg-fs-calc-{{.ENVIRONMENT}}
           - --secure-cookie=true
           - --http-only-cookie=true
           - --verbose
