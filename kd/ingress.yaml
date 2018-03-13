@@ -1,0 +1,25 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    stable.k8s.psg.io/kcm.class: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx-external"
+    ingress.kubernetes.io/secure-backends: "true"
+    ingress.kubernetes.io/whitelist-source-range: "{{.WHITELIST}}"
+    stable.k8s.psg.io/kcm.provider: http
+  name: pttg-fs-calc-ui-ingress-external
+spec:
+  tls:
+  - hosts:
+    - {{.DOMAIN_NAME}}
+    secretName: letsencrypt-pttg-fs-calc-ui
+  rules:
+  - host: {{.DOMAIN_NAME}}
+    http:
+      paths:
+      - backend:
+          serviceName: pttg-fs-calc-ui
+          servicePort: 443
+        path: /
